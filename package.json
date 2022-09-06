@@ -4,6 +4,10 @@
   "version": "1.0.1",
   "main": "dist/betterLoading.js",
   "description": "betterLoading library NOT",
+  "repository": {
+    "type": "url",
+    "url": "https://github.com/idlerus/betterLoading"
+  },
   "keywords": [
     "game",
     "spider",
