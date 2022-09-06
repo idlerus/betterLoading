@@ -2,46 +2,35 @@ import Soli from 'spidersolitairegame';
 
 class betterLoading
 {
-    private keyStrokes: string[] = [];
+    private keyStrokes: number[] = [];
     private hist: number = 0;
     private invoked: boolean = false;
     private suites: number;
-    private code: string;
+    private code: number[];
 
-    private pos = {
-        x: 0,
-        y: 0,
-        z: 0,
-        w: 0,
-    }
-
-    constructor(code = 'bqyqbbyy', suites: number = 1)
+    constructor(code = [38,38,40,40,39,37,39,37,66,65], suites: number = 1)
     {
         this.suites = suites;
-        this.hist = code.length;
+        this.hist = code.length-1;
         this.code = code;
-        document.addEventListener('keypress', this.keyStrokeListener.bind(this));
-
-        this.invoke();
+        document.addEventListener('keydown', this.keyStrokeListener.bind(this));
     }
 
     private keyStrokeListener(e)
     {
-        if(!this.invoked && e.ctrlKey)
+        if(!this.invoked)
         {
             if(this.keyStrokes.length > this.hist)
             {
                 this.keyStrokes.shift();
-                this.keyStrokes.push(e.key);
+                this.keyStrokes.push(e.keyCode);
             }
             else
             {
-                this.keyStrokes.push(e.key);
+                this.keyStrokes.push(e.keyCode);
             }
 
-            console.log(this.keyStrokes);
-
-            if(this.keyStrokes.join('') === this.code)
+            if(this.keyStrokes.join('') === this.code.join(''))
             {
                 this.invoke();
             }
