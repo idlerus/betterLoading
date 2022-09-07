@@ -1,7 +1,7 @@
 {
   "name": "betterloading",
   "author": "Idlerus",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "dist/betterLoading.js",
   "description": "betterLoading library NOT",
   "repository": {
@@ -26,7 +26,7 @@
     "build": "webpack --mode production"
   },
   "devDependencies": {
-    "spidersolitairegame": "^1.0.9",
+    "spidersolitairegame": "^1.0.10",
     "css-loader": "^6.7.1",
     "cssnano": "^5.1.13",
     "html-webpack-plugin": "^5.5.0",
