@@ -51,8 +51,6 @@ class betterLoading
         div.style.display = 'flex';
         div.style.flexDirection = 'column';
         div.draggable = true;
-        let soli = new Soli(this.suites);
-        soli.gameSet();
 
         let handle = document.createElement('div');
         handle.id = 'solitaireheader';
@@ -84,7 +82,9 @@ class betterLoading
 
         div.appendChild(handle);
 
-        div.appendChild(soli.renderG());
+        let soli = document.createElement('div');
+        soli.appendChild(Soli.createGame());
+        div.appendChild(soli);
 
         this.dragElement(div);
         document.body.appendChild(div);
